@@ -4,8 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>Thsi is the threads clone app for the main thing in the app</Text>
 
-      <StatusBar style="auto" />
+
     </View>
   );
 }
