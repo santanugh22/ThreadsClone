@@ -1,4 +1,5 @@
 import express from 'express'
+import {spawn} from 'child_process'
 
 
 
@@ -15,7 +16,10 @@ app.use(express.json())
 // requiring the auth routes
 app.use('/api/v1/auth',authRoute)
 
-
+const childPython=spawn('python3',['--version'])
+childPython.stdout.on('data',(data)=>{
+    console.log(`${data}`)
+})
 
 app.listen(PORT,()=>{
     console.log(`The server is running on ${PORT}`)
