@@ -24,7 +24,7 @@ const LoginScreen = () => {
           style={{
             justifyContent: "center",
             alignItems: "center",
-
+            marginTop: 1,
           }}
         >
           <Text style={{ fontWeight: "bold", fontSize: 17 }}>
