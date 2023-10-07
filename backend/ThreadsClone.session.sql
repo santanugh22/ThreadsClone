@@ -13,3 +13,17 @@ CREATE TABLE users(
 )
 
 
+-- Adding the follower 
+
+
+CREATE TABLE followers(
+    id serial PRIMARY KEY,
+    userid INTEGER REFERENCES users(userid) NOT NULL,
+    follower INTEGER REFERENCES users(userid) NOT NULL);
+
+
+
+    
+
+
+

@@ -1,13 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import StackNavigator from './Components/StackNavigator';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Thsi is the threads clone app for the main thing in the app</Text>
-
-
-    </View>
+    <NavigationContainer>
+    
+    <StackNavigator/>
+    </NavigationContainer>
+   
   );
 }
 
