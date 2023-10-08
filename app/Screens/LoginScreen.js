@@ -3,12 +3,29 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { TextInput } from 'react-native-gesture-handler';
 import {useState} from 'react'
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 const LoginScreen = () => {
     const navigation=useNavigation()
 
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
+
+    async function logginIn(){
+      try {
+        const userObject={
+          username:email,password
+        }
+        const url='http://localhost:3001/api/v1/auth/login'
+        await axios.post(url,userObject).then(function(response){console.log(response.data)}).catch(err=>console.log(err))
+
+        
+      } catch (error) {
+        console.log(error)
+        
+      }
+
+    }
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "#fff", alignItems: "center" }}
@@ -105,6 +122,8 @@ const LoginScreen = () => {
               alignItems: "center",
               borderRadius: 12,
             }}
+
+            onPress={()=>logginIn()}
           >
             <Text style={{ color: "white", fontSize: 21, fontWeight: "bold" }}>
               Login
