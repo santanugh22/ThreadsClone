@@ -14,7 +14,7 @@ const Stack=createStackNavigator()
 const Tab=createTabNavigator()
 
 function Homescreen(){
-  return <Tab.Navigator>
+  return <Tab.Navigator screenOptions={{headerShown:false}}>
     <Tab.Screen name="Post" component={Post}/>
     <Tab.Screen name="createPost" component={CreatePost}/>
     <Tab.Screen name="Activity" component={Activity}/>
