@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack'
-import {createTabNavigator} from '@react-navigation/bottom-tabs'
+
 import { StyleSheet, Text, View } from 'react-native'
 import LoginScreen from '../Screens/LoginScreen'
 import RegisterScreen from '../Screens/RegisterScreen'
@@ -7,11 +7,14 @@ import Activity from '../Screens/Activity'
 import CreatePost from '../Screens/CreatePost'
 import Post from '../Screens/Post'
 import Profile from '../Screens/Profile'
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+const Tab = createBottomTabNavigator();
 
 const Stack=createStackNavigator()
 
 
-const Tab=createTabNavigator()
+
 
 function Homescreen(){
   return <Tab.Navigator screenOptions={{headerShown:false}}>
